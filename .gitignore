@@ -1,0 +1,9 @@
+# extensions & files
+.git
+.DS_Store
+.Idea
+
+# folders & files
+node_modules
+readme.html
+changelog.html

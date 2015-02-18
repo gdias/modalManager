@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal Manager in native JavaScript</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/plugin.popinManager.css" />
+</head>
+<body>
+	<h1>Modal Manager with VanillaJS</h1>
+
+	<a href="#" class="open-popin1">open-popin #1</a>
+
+    <a href="#" class="open-popin2">open-popin #2</a>
+
+	<div id="myPopin1">
+		Content of my popin #1
+		<br>
+		<a href="#" class="closer" title="Fermer">Fermer</a>
+	</div>
+
+
+    <div id="myPopin2">
+        Content of my popin #2
+        <br>
+        <a href="#" class="closer" title="Fermer">Fermer</a>
+    </div>
+
+
+    <script src="js/script.js"></script>
+	<script>
+        new modalManager({
+            selector : ".open-popin1",
+            target : "myPopin1",
+            cssToContainer : "modalStyles"
+        });
+
+        new modalManager({
+            selector : ".open-popin2",
+            target : "myPopin2",
+            cssToContainer : "modalStyles"
+        })
+	</script>
+</body>
+</html> 
