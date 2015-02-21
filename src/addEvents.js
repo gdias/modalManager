@@ -5,26 +5,26 @@
 		selector => String | Cibling Css Class of handler element
 		target   => String | Cibling container of popin by ID
 	*/
-var gElemCss, gElemID, addClass, removeClass, isOpen, centerE, objLayerT, objCloserClass;
+var gElemCss, gElemID, addClass, removeClass, isOpen, centerE, objLayerT, objCloserClass, toggleHashID;
 	
 	gElemCss = require('./modules/ciblingDomClass.js'),
 	gElemID = require('./modules/ciblingDomID.js'),
 	removeClass = require('./modules/removeCssClassInElem.js'),
 	addClass = require('./modules/addCssClassInElem.js'),
 	centerE = require('./modules/centerElement.js'),
-	isOpen = false;
+	toggleHashID = require('./modules/toggleHashForId');
 
 module.exports = function(opts, obj) {
 	
 	var objSelector, selector, target, layerID;
 
         selector = opts.selector;
-        target = opts.idContainer;
-        layerID = opts.layerID;
+        target = opts.containerID;
+        layerID = opts.layerID; 
 
 		objSelector = gElemCss(selector);
 		objLayerT = gElemID(layerID);
-		objCloserClass = gElemCss("#"+target+" .closer");
+		objCloserClass = gElemCss(toggleHashID(target, true)+" .closer");
 
 		// Attach event for open/close popin 
 		objSelector.addEventListener("click", function(e){

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Modal Manager in native JavaScript</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/plugin.popinManager.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/plugin.modalManager.css" />
 </head>
 <body>
 	<h1>Modal Manager with VanillaJS</h1>
@@ -30,8 +30,11 @@
 	<script>
         new modalManager({
             selector : ".open-popin1",
-            target : "myPopin1",
-            cssToContainer : "modalStyles"
+            target : "#myPopin1",
+            cssToContainer : "modalStyles",
+            openBefore : function(){
+                console.log("This message is show before open modal");
+            }
         });
 
         new modalManager({

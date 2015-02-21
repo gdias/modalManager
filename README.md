@@ -1,7 +1,7 @@
 # Modal manager in VanillaJS 
 
-## vanillaModal()
-> v 0.0.1
+## modalManager
+> v 0.0.2
 
 Simple modal manager in native Javascript
 
@@ -22,17 +22,17 @@ Clone this repository and in CLI :
 ### HTML
 This script have need a minimal structure HTML.
 ```
-<a href="#" class="open-my-modal">open a modal</a>
+<a href="#" class="open-modal">click for open modal</a>
 <div id="modalContainer">Content of modal</div>
 ```
 
 ### JS
-A simple call script
+Call modalManager Object and pass an configuration object for personalize in your case. 
 ```
 <script>
-	new vanillaModal({
-		selector : "open-my-modal", // name of cssClass
-    	target : "modalContainer" // id of container
+	new modalManager({
+		selector : ".open-my-modal", // name of cssClass
+    	target : "#modalContainer" // id of container
 	});
 </script>
 ```
@@ -42,16 +42,16 @@ Import a basics CSS styles in your project for your first modal.
 After works, you can made easy custom styles in use "cssToContainer" parameter.
 
 ```
-<link rel="stylesheet" type="text/css" href="stylesheets/plugin.popinManager.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/plugin.modalManager.css" />
 ```
 
 ### Custom popin in global container
 As evocate more top, you can use the parameter "cssToContainer", you can pass a css class for integrate your styles and add easily effect in CSS3
 ```
 <script>
-	new vanillaModal({
-		selector : "open-my-modal",
-    	target : "modalContainer",
+	new modalManager({
+		selector : ".open-my-modal",
+    	target : "#modalContainer",
     	cssToContainer : "modalStyles"
 	});
 </script>
@@ -63,13 +63,13 @@ Multiple parameters permits you to adapt this script at your usecase.
 
 | Name 		     | Type     | Default    	    | Description 							  						  |
 |----------------|----------|-------------------|-----------------------------------------------------------------|
-| **selector** 	 | String   | ""         		| (required) CssClass represent element launch open event         |
-| **target**     | String   | ""         		| (required) Target content of modal 		 		 			  |
-| idContainer    | String   | containerID_      | Used for generate an wrapper of container of the modal 		  |
+| **selector** 	 | String   | null         		| (required) CssClass represent element launch open event         |
+| **target**     | String   | null         		| (required) Target content of modal 		 		 			  |
+| containerID    | String   | containerID_      | Used for generate an wrapper 							 		  |
 | withLayer      | Boolan   | true				| generate a grey layer or not									  |
 | layerID	     | String   | modalLayer        | #id of grey layer, auto generated								  |
 | eventStart     | String   | click				| Event to start launch open modal 								  |
-| cssToContainer | String   | ""				| Add a css to an container auto generated 						  |
+| cssToContainer | String   | null				| Add a css to an container auto generated 						  |
 | isOpen 		 | Boolean  | false   			| State of object  												  |
 
 ### Roadmap

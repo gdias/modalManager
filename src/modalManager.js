@@ -26,14 +26,15 @@ var modalManager = function(opts) {
 
     // configuration module
     this.options = {
-        selector : "",
-        target : "",
-        idContainer : "containerID_",
+        selector : null,
+        target : null,
+        containerID : "containerID_",
         layerID : "modalLayer",
         withLayer : true,
         eventStart : "click",
-        cssToContainer : "",
-        isOpen : false
+        cssToContainer : null,
+        isOpen : false,
+        openBefore : null
     };
 
     modalManager.prototype.init = function(){
@@ -48,15 +49,19 @@ var modalManager = function(opts) {
 
 
     modalManager.prototype.open = function(){
-        removeClass(gElemID(this.options.idContainer), 'hidden'); // show popin
+
+        if (this.options.openBefore) 
+            this.options.openBefore();
+
+        removeClass(gElemID(this.options.containerID), 'hidden'); // show popin
         removeClass(gElemID(this.options.layerID), 'hide');// show grey layer
-        opts.isOpen = true;
+        this.options.isOpen = true;
     }
 
     modalManager.prototype.close = function(){
-        addClass(gElemID(this.options.idContainer), 'hidden');
+        addClass(gElemID(this.options.containerID), 'hidden');
         addClass(gElemID(this.options.layerID), 'hide');// show grey layer
-        opts.isOpen = false;
+        this.options.isOpen = false;
     }
 
    

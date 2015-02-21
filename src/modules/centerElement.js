@@ -1,7 +1,7 @@
 "use strict";
 
 /* 
-	-- Calculate and positionate at Center --
+	-- Calcul center of page --
 	objElem => Object | 
 */
 

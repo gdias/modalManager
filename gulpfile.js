@@ -68,6 +68,7 @@ gulp.task('test', function(){
 
 gulp.task('watch', ['browserify','test'], function() {
 	gulp.watch(['./app/*.html'], ['html']);
+  gulp.watch(['./src/*.js'], ['browserify', 'html']);
 });
 
 
