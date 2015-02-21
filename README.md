@@ -71,12 +71,11 @@ Multiple parameters permits you to adapt this script at your usecase.
 | eventStart     | String   | click				| Event to start launch open modal 								  |
 | cssToContainer | String   | null				| Add a css to an container auto generated 						  |
 | isOpen 		 | Boolean  | false   			| State of object  												  |
+| openBefore     | Function | null				| Callback method called before open modal 						  |
 
 ### Roadmap
 + Add Unit-Tests
-+ Replace options that are string empty by default in null values
-+ Add Ajax content
-+ Add Callback methods
++ Add Ajax content and callback methods
 + Add timer for auto-close modal (prehome mode)
 
 ### FAQ
