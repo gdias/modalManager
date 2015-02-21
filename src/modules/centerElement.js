@@ -15,7 +15,7 @@ module.exports = function(objElem){
 
 
 	var objSizeElem = gSizeElem(objElem);
-
+	
 	var posLeft = (parseInt(objWindow().width - objSizeElem.width) / 2);
 	var posTop = (parseInt(objWindow().height - objSizeElem.height) / 2);
 	
@@ -23,7 +23,9 @@ module.exports = function(objElem){
 		left : posLeft,
 		top : posTop
 	}
-
+	
     setPos(objElem, posPopin);
+
+
 
 }

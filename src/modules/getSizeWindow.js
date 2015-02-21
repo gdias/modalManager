@@ -6,13 +6,9 @@
 
 module.exports = function() {
 
-	var objSize;
-
-		objSize = {
+	return {
 			width : window.innerWidth,
 			height : window.innerHeight
-		}
-
-	return objSize;
+		};
 
 }
