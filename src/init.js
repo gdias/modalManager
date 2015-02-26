@@ -7,28 +7,24 @@
 
 */
 
-var addDiv, moveElem, gElemID, addClass, centerE, toggleHashID;
-
-	addDiv 		 = require('./modules/addDivInDom'),
-	moveElem 	 = require('./modules/moveDomNode'),
-	gElemID 	 = require('./modules/ciblingDomID'),
-	addClass 	 = require('./modules/addCssClassInElem'),
-	centerE 	 = require('./modules/centerElement'),
+var addDiv = require('./modules/addDivInDom'),
+	moveElem = require('./modules/moveDomNode'),
+	gElemID = require('./modules/ciblingDomID'),
+	addClass = require('./modules/addCssClassInElem'),
+	centerE = require('./modules/centerElement'),
 	toggleHashID = require('./modules/toggleHashForId');
 
 module.exports = function(opts) {
 
-    var containID, targetID, gLayerID, withLayer;
-        opts.containerID = opts.containerID + toggleHashID(opts.target, false);
+    opts.containerID = opts.containerID + toggleHashID(opts.target, false);
 
-        containID = opts.containerID;
-        targetID = toggleHashID(opts.target, false);
-        gLayerID = opts.layerID;
+    var containID = opts.containerID,
+        targetID = toggleHashID(opts.target, false),
+        gLayerID = opts.layerID,
         withLayer = opts.withLayer;
 
 	addDiv(containID); // add new container in DOM
-	//console.log("gElemID(containID) :: ",gElemID(containID));
-	//return;
+	
 	moveElem(gElemID(containID), gElemID(targetID), true); // Move container popin in new container (with content)
 
     if (opts.cssToContainer) // insert css class on container

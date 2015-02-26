@@ -38,15 +38,10 @@ var modalManager = function(opts) {
     };
 
     modalManager.prototype.init = function(){
-
         extend(this.options, opts); // merge with options passed in parameter
-
         prepareDom(this.options); // Prepare DOM with options
-
         addEvents(this.options, this); // Add events on elements
     }
-
-
 
     modalManager.prototype.open = function(){
 
@@ -64,7 +59,6 @@ var modalManager = function(opts) {
         this.options.isOpen = false;
     }
 
-   
     // start
     this.init();
 
