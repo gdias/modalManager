@@ -7,6 +7,6 @@
 */
 
 module.exports = function(obj, cssName) {
-	var regExp = new RegExp (cssName,"");
+	var regExp = new RegExp (cssName,"\ig");
 	obj.className = obj.className.replace(regExp, "");
 }

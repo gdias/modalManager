@@ -8,7 +8,6 @@
 	
 var gElemCss = require('./modules/ciblingDomClass.js'),
 	gElemID = require('./modules/ciblingDomID.js'),
-	removeClass = require('./modules/removeCssClassInElem.js'),
 	addClass = require('./modules/addCssClassInElem.js'),
 	centerE = require('./modules/centerElement.js'),
 	toggleHashID = require('./modules/toggleHashForId');
